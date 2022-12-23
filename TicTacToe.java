@@ -15,6 +15,12 @@ public class TicTacToe {
         // Create a scanner to read input from the command line
         Scanner scanner = new Scanner(System.in);
 
+        // Prompt the players for their names
+        System.out.print("Enter player 1's name: ");
+        String player1Name = scanner.nextLine();
+        System.out.print("Enter player 2's name: ");
+        String player2Name = scanner.nextLine();
+
         // The current player (X or O)
         char player = 'X';
 
@@ -30,8 +36,16 @@ public class TicTacToe {
                 System.out.println();
             }
 
+            // Get the name of the current player
+            String currentPlayerName;
+            if (player == 'X') {
+                currentPlayerName = player1Name;
+            } else {
+                currentPlayerName = player2Name;
+            }
+
             // Prompt the user for their next move
-            System.out.print("Enter row and column for your next move (e.g. 0 1): ");
+            System.out.print(currentPlayerName + ", enter row and column for your next move (e.g. 0 1): ");
             int row = scanner.nextInt();
             int col = scanner.nextInt();
 
@@ -66,18 +80,9 @@ public class TicTacToe {
     public static boolean isGameOver(char[][] board) {
         // Check for a win along the rows
         for (int i = 0; i < 3; i++) {
-            if (board[i][0] != ' ' && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
-                return true;
+            if (board[i][0] != ' ' && board[i][0] == board) {
+
             }
         }
-
-        // Check for a win along the columns
-        for (int i = 0; i < 3; i++) {
-            if (board[0][i] != ' ' && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
-                return true;
-            }
-        }
-
-        // Check for a win along the diagonals
     }
 }
