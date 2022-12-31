@@ -1,4 +1,5 @@
-import random
+public class dice_roller
+
 
 def dice_roller(num_dice, dice_type, add):
         total = 0
